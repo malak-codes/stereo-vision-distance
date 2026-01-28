@@ -236,11 +236,11 @@ def find_best_match_along_epipolar_line(ptL, kp2, des2, F, left_descriptor, img2
 # # Main
 # # -------------------------------
 if __name__ == "__main__":
-    img1 = cv2.imread('box2.jpg', cv2.IMREAD_GRAYSCALE)
-    img2 = cv2.imread('box1.jpg', cv2.IMREAD_GRAYSCALE)
+    img1 = cv2.imread('../data/sample_images/box2.jpg', cv2.IMREAD_GRAYSCALE)
+    img2 = cv2.imread('../data/sample_images/box1.jpg', cv2.IMREAD_GRAYSCALE)
     assert img1 is not None and img2 is not None, "box1.jpg / box2.jpg not found (or paths incorrect)."
 
-    calib = np.load('camera_calibration_data.npz')
+    calib = np.load('../data/calibration_data/camera_calibration_data.npz')
     K = calib['K'].astype(np.float64)
     dist = calib['dist']
 
